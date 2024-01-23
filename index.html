@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>note</title>
+    <link rel="icon" href="img/note_icon.jpg">
+    <link rel="stylesheet" href="css/index_style.css">
+</head>
+
+
+<body>
+    <div id="app">
+        <div>
+            <h1 id="title">简易记事本</h1>
+        </div>
+        <div class="add">
+            <input type="text" v-model="addWork" @keyup.enter="add">
+            <button id="btn-add" @click="add">添加</button>
+        </div>
+        <div class="list">
+            <ul>
+                <li v-for="(work,index) in works" :key="work.id">
+                    <span>{{index+1}}</span>
+                    <span id="work-name">{{work.name}}</span>
+                    <button id="btn-del" @click="del(work.id)"></button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer" v-show="works.length > 0">
+            <span>合计：{{works.length}}</span>
+            <button id="btn-c" @click="clear()">清空</button>
+        </div>
+
+    </div>
+</body>
+<script src="js/vue2.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            works: [
+                { id: 1, name: '吃饭' },
+                { id: 2, name: '睡觉' },
+                { id: 3, name: '打豆豆' },
+                
+            ],
+            addWork: ''
+        },
+        methods: {
+            add() {
+                if (this.addWork.trim() !== '') {
+                    this.works.unshift({
+                        id: +new Date(),
+                        name: this.addWork
+                    });
+                    this.addWork = ''
+                }
+
+            },
+            del(id) {
+                this.works = this.works.filter(item => item.id !== id)
+            },
+            clear() {
+                this.works = []
+            }
+        }
+    })
+</script>
+
+</html>

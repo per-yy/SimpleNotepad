@@ -1,0 +1,82 @@
+* {
+    font-family: '幼圆';
+}
+
+#app {
+    width: 280px;
+    margin: auto auto;
+    margin-top: 200px;
+    background-color: rgb(246, 220, 172);
+    padding: 5px;
+    border-radius: 8px;
+}
+#title{
+    text-align: center;
+}
+
+input {
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    border-width: 1px;
+    /* 边框粗细 */
+    border-color: rgb(58, 44, 44);
+    /* 边框颜色 */
+    /* 被选中时的状态 */
+    outline: none;
+}
+
+
+#btn-add {
+    height: 40px;
+    width: 60px;
+    border: none;
+    background-color: rgb(246, 220, 172);
+}
+
+#btn-add:hover {
+    color: orange;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-left: -30px;
+    height: 30px;
+}
+
+#work-name {
+    margin-left: 20px;
+}
+
+#btn-del {
+    width: 16px;
+    height: 16px;
+    border: none;
+    float: right;
+    margin-right: 10px;
+    background-color: rgb(246, 220, 172);
+}
+
+#btn-del:hover {
+
+    background-image: url("../img/cc.png");
+    background-repeat: no-repeat;
+}
+
+.footer {
+    height: 30px;
+}
+
+#btn-c {
+    float: right;
+    margin-right: 10px;
+    border: none;
+    background-color: rgb(246, 220, 172);
+}
+
+#btn-c:hover {
+    color: orange;
+}
